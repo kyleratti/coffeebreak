@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 // /user/
-Route::get('/user/login', 'User\UserController@showLogin')
+Route::get('/user/login', 'User\LoginController@showLogin')
     ->name('user.login');
 
 Route::get('/user/login/go', 'Auth\AuthController@redirectToProvider')
