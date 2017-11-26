@@ -16,9 +16,11 @@ Route::get('/', function () {
 });
 
 // /user/
-Route::get('/user/login', function() {
-    return view('welcome');
-});
+Route::get('/user/login', 'User\UserController@showLogin')
+    ->name('user.login');
+
+Route::get('/user/login/go', 'Auth\AuthController@redirectToProvider')
+    ->name('user.login.go');
 
 Route::get('/user/logout', function() {
     return view('welcome');
