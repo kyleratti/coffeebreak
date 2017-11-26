@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// /user/
+Route::get('/user/login', function() {
+    return view('welcome');
+});
+
+Route::get('/user/logout', function() {
+    return view('welcome');
+});
+
+Route::get('/user/auth/continue', 'Auth\AuthController@handleProviderCallback');
