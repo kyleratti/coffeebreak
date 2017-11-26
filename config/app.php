@@ -231,6 +231,7 @@ return [
 
         // Socialite
         'Socialite' => Illuminate\Support\Facades\Socialite::class,
+        'Socialize' => 'Laravel\Socialite\Facades\Socialite',
 
     ],
 
