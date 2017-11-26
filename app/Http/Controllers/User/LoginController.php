@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class LoginController extends Controller
 {
     /**
      * Show the user login page
@@ -14,6 +15,8 @@ class UserController extends Controller
      */
     public function showLogin()
     {
-        return view('user/login');
+        return view('user/login', [
+            'objUser' => Auth::user(),
+        ]);
     }
 }
