@@ -23,6 +23,10 @@ Route::get('/menu', 'Menu\MenuController@show')
 Route::post('/order/store', 'Order\OrderController@store')
     ->name('order.place');
 
+Route::get('/order/store/mailable', function() {
+    return new App\Mail\OrderPlaced(App\Drink\DrinkOrder::first());
+});
+
 // /user/
 Route::get('/user/login', 'User\LoginController@showLogin')
     ->name('user.login');
