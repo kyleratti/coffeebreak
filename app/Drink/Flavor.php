@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Drink;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,6 +22,15 @@ class Flavor extends Model
      * @var array
      */
     protected $hidden = [
+    ];
+
+    /**
+     * The attributes that should be cast to native types
+     * 
+     * @var array
+     */
+    protected $casts = [
+        'is_in_stock' => 'boolean',
     ];
 
     /**
