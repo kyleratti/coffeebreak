@@ -59,4 +59,14 @@ class User extends Authenticatable
 
         return null;
     }
+
+    /**
+     * Get the user's drink orders
+     * 
+     * @return array
+     */
+    public function drinkorders()
+    {
+        return $this->hasMany('App\Drink\DrinkOrder');
+    }
 }
