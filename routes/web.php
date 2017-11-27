@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+// /menu/
+Route::get('/menu', 'Menu/MenuController@show')
+    ->name('menu');
+
 // /user/
 Route::get('/user/login', 'User\LoginController@showLogin')
     ->name('user.login');
