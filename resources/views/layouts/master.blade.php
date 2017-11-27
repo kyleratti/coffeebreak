@@ -21,6 +21,9 @@
                         <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     @if(Auth::check())
+                        <li class="nav-item {{ Route::currentRouteName() == 'menu' ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('menu') }}">Menu</a>
+                        </li>
                         <li class="nav-item {{ Route::currentRouteName() == 'user.logout' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('user.logout') }}">Log out</a>
                         </li>
