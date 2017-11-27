@@ -44,6 +44,16 @@ class Drink extends Model
     }
 
     /**
+     * Get the user's drink orders
+     * 
+     * @return array
+     */
+    public function drinkorders()
+    {
+        return $this->hasMany('App\Drink\DrinkOrder');
+    }
+
+    /**
      * Check if the drink is in stock (checks flavors, too)
      * 
      * @return boolean
