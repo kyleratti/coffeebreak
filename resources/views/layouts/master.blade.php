@@ -36,6 +36,10 @@
             </div>
         </nav>
 
+        @if($errors->any())
+            @include('layouts.errors')
+        @endif
+
         @if(App::environment('local'))
             @include("layouts.debug")
         @endif
