@@ -22,6 +22,12 @@ class EventServiceProvider extends ServiceProvider
             // add your listeners (aka providers) here
             'SocialiteProviders\Graph\GraphExtendSocialite@handle',
         ],
+
+        // Order Events
+
+        'App\Events\OrderReady' => [
+            'App\Listeners\OrderReady@handle',
+        ],
     ];
 
     /**
