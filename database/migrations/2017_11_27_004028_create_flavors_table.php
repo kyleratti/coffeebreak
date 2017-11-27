@@ -15,6 +15,8 @@ class CreateFlavorsTable extends Migration
     {
         Schema::create('flavors', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name')->unique();
+            $table->boolean('is_in_stock')->index();
             $table->timestamps();
         });
     }

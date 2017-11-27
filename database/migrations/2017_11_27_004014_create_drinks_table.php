@@ -15,6 +15,10 @@ class CreateDrinksTable extends Migration
     {
         Schema::create('drinks', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name')->unique();
+            $table->string('description');
+            $table->unsignedTinyInteger('shots')->index();
+            $table->boolean('is_in_stock')->index();
             $table->timestamps();
         });
     }
