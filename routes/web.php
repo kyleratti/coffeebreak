@@ -16,7 +16,7 @@ Route::get('/', function () {
 })->name('home');
 
 // /menu/
-Route::get('/menu', 'Menu/MenuController@show')
+Route::get('/menu', 'Menu\MenuController@show')
     ->name('menu');
 
 // /user/
