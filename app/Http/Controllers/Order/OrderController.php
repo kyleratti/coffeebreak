@@ -4,9 +4,13 @@ namespace App\Http\Controllers\Order;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 use App\Drink\Drink;
 use App\Drink\Flavor;
+use App\Drink\DrinkOrder;
+
+use App\Events\OrderPlaced;
 
 class OrderController extends Controller
 {
@@ -19,7 +23,7 @@ class OrderController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Place a drink order
      * 
@@ -37,17 +41,19 @@ class OrderController extends Controller
         $iShots = intval($objRequest->input('shots'));
         $iMilkType = intval($objRequest->input('milk'));
 
-        $objDrink = Drink::where('id', $iDrinkID);
+        $objDrink = Drink::where('id', $iDrinkID)->first();
 
-        if($objDrink)
-        {
-            //
-        }
-        else
-        {
-            // not found
-        }
+        $objOrder = new DrinkOrder();
+        $objOrder->shots = $iShots;
+        $objOrder->milk = $iMilkType;
+        $objOrder->drink()->associate($objDrink);
+        $objOrder->user()->associate(Auth::user());
+        $objOrder->save();
 
-        return view('order.place');
+        event(new OrderPlaced($objOrder));
+
+        return view('order.place', [
+            'objOrder' => $objOrder
+        ]);
     }
 }

@@ -24,6 +24,9 @@ class EventServiceProvider extends ServiceProvider
         ],
 
         // Order Events
+        'App\Events\OrderPlaced' => [
+            'App\Listeners\OrderPlaced@handle',
+        ],
 
         'App\Events\OrderReady' => [
             'App\Listeners\OrderReady@handle',

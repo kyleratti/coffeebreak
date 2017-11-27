@@ -5,7 +5,9 @@ namespace App\Listeners;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class OrderReady
+use Illuminate\Support\Facades\Mail;
+
+class OrderPlaced
 {
     /**
      * Create the event listener.
@@ -20,11 +22,13 @@ class OrderReady
     /**
      * Handle the event.
      *
-     * @param  OrderReady  $event
+     * @param  OrderPlaced  $objEvent
      * @return void
      */
-    public function handle(OrderReady $event)
+    public function handle(OrderPlaced $objEvent)
     {
-        //
+        $objDrinkOrder = $objEvent->drinkorder;
+
+        Mail::to($objDrinkOrder->user->email)->send(new OrderPlaced($objDrinkOrder));
     }
 }
