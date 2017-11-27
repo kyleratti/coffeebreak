@@ -31,4 +31,32 @@ class User extends Authenticatable
      */
     protected $hidden = [
     ];
+
+    /**
+     * Set the user's access token
+     * 
+     * @param string $strToken
+     * @return void
+     */
+    public function setTokenAttribute($strToken)
+    {
+        $this->attributes['token'] = encrypt($strToken);
+    }
+
+    /**
+     * Get the user's access token
+     * 
+     * @return string
+     */
+    public function getTokenAttribute()
+    {
+        try
+        {
+            return decrypt($this->attributes['token']);
+        } catch(DecryptionException $e) {
+            Log::error("FATAL ERRROR: Unable to decrypt token: ".$e);
+        }
+
+        return null;
+    }
 }
