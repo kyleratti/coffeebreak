@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 // /user/
 Route::get('/user/login', 'User\LoginController@showLogin')
@@ -22,8 +22,7 @@ Route::get('/user/login', 'User\LoginController@showLogin')
 Route::get('/user/login/go', 'Auth\AuthController@redirectToProvider')
     ->name('user.login.go');
 
-Route::get('/user/logout', function() {
-    return view('welcome');
-});
+Route::get('/user/logout', 'User\LoginController@showLogout')
+    ->name('user.logout');
 
 Route::get('/user/auth/continue', 'Auth\AuthController@handleProviderCallback');
