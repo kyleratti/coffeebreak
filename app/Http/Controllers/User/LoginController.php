@@ -15,8 +15,23 @@ class LoginController extends Controller
      */
     public function showLogin()
     {
-        return view('user/login', [
-            'objUser' => Auth::user(),
-        ]);
+        if(Auth::check())
+        {
+            return redirect()->route('home');
+        }
+
+        return view('user/login');
+    }
+
+    /**
+     * Show the user logout page
+     * 
+     * @return View
+     */
+    public function showLogout()
+    {
+        Auth::logout();
+
+        return redirect()->route('home');
     }
 }
