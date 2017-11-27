@@ -57,7 +57,7 @@ class AuthController extends Controller
         $objAuthedUser = $this->findOrCreateUser($objUser);
         Auth::login($objAuthedUser, true);
 
-        return redirect('/');
+        return redirect()->route('home');
     }
 
     /**
@@ -69,7 +69,7 @@ class AuthController extends Controller
      */
     private function updateToken($objAuthedUser, $objUser)
     {
-        $objAuthedUser->token = encrypt($objUser->token);
+        $objAuthedUser->token = $objUser->token;
         $objAuthedUser->save();
     }
 
