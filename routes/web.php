@@ -19,6 +19,10 @@ Route::get('/', function () {
 Route::get('/menu', 'Menu\MenuController@show')
     ->name('menu');
 
+// /order
+Route::post('/order/store', 'Order\OrderController@store')
+    ->name('order.place');
+
 // /user/
 Route::get('/user/login', 'User\LoginController@showLogin')
     ->name('user.login');
