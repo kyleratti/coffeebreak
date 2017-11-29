@@ -69,4 +69,14 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Drink\DrinkOrder');
     }
+
+    /**
+     * Check if the user is a barista
+     * 
+     * @return boolean
+     */
+    public function isBarista()
+    {
+        return in_array($this->email, config('app.baristas'));
+    }
 }
