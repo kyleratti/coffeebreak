@@ -25,6 +25,18 @@ class OrderController extends Controller
     }
 
     /**
+     * View all open drink orders
+     * 
+     * @return view
+     */
+    public function viewOpen()
+    {
+        return view('order.view.open', [
+            'objOrders' => DrinkOrder::whereNull('finished_at')->orderBy('created_at', 'desc')->get(),
+        ]);
+    }
+
+    /**
      * Place a drink order
      * 
      * @return View
