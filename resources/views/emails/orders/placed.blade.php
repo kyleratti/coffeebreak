@@ -1,6 +1,6 @@
 @extends('emails.template')
 
-@section('title', 'Coffee Order placed!')
+@section('title', 'Coffee order placed!')
 
 @section('content')
     <h1>Coffee Order Placed!</h1>
