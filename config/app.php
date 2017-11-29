@@ -242,4 +242,12 @@ return [
     'flow_order_placed_url' => env('FLOW_ORDER_PLACED_URL', ''),
     'flow_order_completed_url' => env('FLOW_ORDER_COMPELTED_URL', ''),
 
+    /*
+    | Baristas
+    */
+    'baristas' => [
+        env('BARISTA_ONE', ''),
+        env('BARISTA_TWO', env('BARISTA_ONE')),
+    ],
+
 ];
