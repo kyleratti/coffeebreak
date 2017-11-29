@@ -21,11 +21,13 @@ class SendOrderReadyNotification
     /**
      * Handle the event.
      *
-     * @param  OrderReady  $event
+     * @param  OrderPlaced  $objEvent
      * @return void
      */
-    public function handle(OrderReady $event)
+    public function handle(OrderReady $objEvent)
     {
-        //
+        $objDrinkOrder = $objEvent->drinkorder;
+        
+        Mail::to($objDrinkOrder->user->email)->send(new \App\Mail\OrderReady($objDrinkOrder));
     }
 }
