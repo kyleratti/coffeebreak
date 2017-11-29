@@ -28,7 +28,7 @@ Route::get('/order/store/mailable', function() {
 });
 
 Route::get('/order/view/open', 'Order\OrderController@viewOpen')
-    ->middleware('IsBarista')
+    ->middleware(\App\Http\Middleware\IsBarista::class)
     ->name('order.view.open');
 
 // /user/
