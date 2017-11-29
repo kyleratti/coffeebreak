@@ -26,6 +26,7 @@ class EventServiceProvider extends ServiceProvider
         // Order Events
         'App\Events\OrderPlaced' => [
             'App\Listeners\SendOrderPlacedNotification',
+            'App\Listeners\SendOrderReceivedNotification',
         ],
 
         'App\Events\OrderReady' => [
