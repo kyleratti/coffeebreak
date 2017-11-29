@@ -25,8 +25,8 @@
                             <a class="nav-link" href="{{ route('menu') }}">Menu</a>
                         </li>
                         @if(Auth::user()->isBarista())
-                            <li class="nav-item {{ Route::currentRouteName() == 'order.view.all' ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ route('order.view.all') }}">Open Orders</a>
+                            <li class="nav-item {{ Route::currentRouteName() == 'order.view.open' ? 'active' : '' }}">
+                                <a class="nav-link" href="{{ route('order.view.open') }}">Open Orders</a>
                             </li>
                         @endif
                         <li class="nav-item {{ Route::currentRouteName() == 'user.logout' ? 'active' : '' }}">

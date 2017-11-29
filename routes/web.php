@@ -27,8 +27,8 @@ Route::get('/order/store/mailable', function() {
     return new App\Mail\OrderPlaced(App\Drink\DrinkOrder::first());
 });
 
-Route::get('/order/view/all', 'Order\OrderController@viewAll')
-    ->name('order.view.all');
+Route::get('/order/view/open', 'Order\OrderController@viewOpen')
+    ->name('order.view.open');
 
 // /user/
 Route::get('/user/login', 'User\LoginController@showLogin')
