@@ -26,6 +26,17 @@ class DrinkOrder extends Model
     ];
 
     /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'finished_at',
+    ];
+
+    /**
      * The drink that belongs to this order
      * 
      * @return Drink
