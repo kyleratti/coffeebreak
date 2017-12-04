@@ -180,6 +180,9 @@ return [
         // Socialite
         \SocialiteProviders\Manager\ServiceProvider::class,
 
+        // Settings
+        Unisharp\Setting\SettingServiceProvider::class,
+
     ],
 
     /*
@@ -232,6 +235,9 @@ return [
         // Socialite
         'Socialite' => Illuminate\Support\Facades\Socialite::class,
         'Socialize' => 'Laravel\Socialite\Facades\Socialite',
+
+        // Settings
+        'Setting' => Unisharp\Setting\SettingFacade::class,
 
     ],
 
