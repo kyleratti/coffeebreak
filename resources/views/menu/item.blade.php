@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-outline btn-primary">Place Order</button>
+            <button type="submit" class="btn btn-outline btn-primary" {{ !Setting::get('accepting_orders', false) ? 'disabled' : '' }}>Place Order</button>
         </form>
     </div>
 </div>

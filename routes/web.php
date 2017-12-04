@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+// /admin/
+Route::get('/admin/settings/accepting_orders/toggle', 'Admin\SettingsController@toggleAcceptingOrders')
+    ->name('admin.settings.accepting_orders.toggle');
+
 // /menu/
 Route::get('/menu', 'Menu\MenuController@show')
     ->name('menu');
