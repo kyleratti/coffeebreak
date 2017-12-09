@@ -33,7 +33,7 @@ class SendOrderReceivedNotification
     {
         $objDrinkOrder = $objEvent->drinkorder;
         
-        $objBaristas = User::where('email', config('app.baristas')[0])->orWhere('email', config('app.baristas'[1]))->get();
+        $objBaristas = User::where('email', config('app.baristas')[0])->orWhere('email', config('app.baristas')[1])->get();
         
         foreach($objBaristas as $objBarista)
         {
