@@ -19,8 +19,9 @@ class CreateDrinkOrdersTable extends Migration
             $table->foreign('drink_id')->references('id')->on('drinks');
             $table->integer('user_id')->index();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('milk_id')->index();
+            $table->foreign('milk_id')->references('id')->on('milks');
             $table->unsignedTinyInteger('shots');
-            $table->unsignedTinyInteger('milk');
             $table->timestamp('finished_at')->nullable()->index();
             $table->timestamps();
         });
