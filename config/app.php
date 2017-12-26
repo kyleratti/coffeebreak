@@ -254,12 +254,6 @@ return [
     'baristas' => [
         env('BARISTA_ONE', ''),
         env('BARISTA_TWO', env('BARISTA_ONE')),
-    ],
-
-    /*
-    | Order settings
-    */
-
-    'order_max_life' => env('ORDER_MAX_LIFE', 6),
+    ]
 
 ];
