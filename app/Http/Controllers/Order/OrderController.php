@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Drink\Drink;
 use App\Drink\Flavor;
 use App\Drink\DrinkOrder;
+use App\Drink\Milk;
 
 use App\Events\OrderPlaced;
 
@@ -54,11 +55,12 @@ class OrderController extends Controller
         $iMilkType = intval($objRequest->input('milk'));
 
         $objDrink = Drink::where('id', $iDrinkID)->first();
+        $objMilk = Milk::where('id', $iMilkType)->first();
 
         $objOrder = new DrinkOrder();
         $objOrder->shots = $iShots;
-        $objOrder->milk = $iMilkType;
         $objOrder->drink()->associate($objDrink);
+        $objOrder->milk()->associate($objMilk);
         $objOrder->user()->associate(Auth::user());
         $objOrder->save();
 
