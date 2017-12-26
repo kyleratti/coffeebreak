@@ -69,7 +69,7 @@ class CreateDrinksFlavors extends Migration
         $objVanillaLatte->flavors()->attach($objVanilla->id);
 
         $objCaramelLatte = Drink::create([
-            'Caramel Latte',
+            'name' => 'Caramel Latte',
             'description' => 'A latte with caramel flavoring',
             'shots' => 2,
         ]);
