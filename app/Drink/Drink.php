@@ -15,7 +15,6 @@ class Drink extends Model
         'name',
         'description',
         'shots',
-        'is_in_stock',
     ];
 
     /**
@@ -32,7 +31,6 @@ class Drink extends Model
      * @var array
      */
     protected $casts = [
-        'is_in_stock' => 'boolean',
     ];
 
     /**
@@ -60,9 +58,6 @@ class Drink extends Model
      */
     public function isInStock()
     {
-        if($this->flavors()->where('is_in_stock', 0)->count() > 0)
-            return false;
-
-        return $this->is_in_stock;
+        return $this->flavors()->where('is_in_stock', 0)->count() == 0;
     }
 }
