@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Drink\Drink;
 use App\Drink\Flavor;
 use App\Drink\DrinkOrder;
+use App\Drink\Milk;
 
 class RecipeController extends Controller
 {
@@ -19,7 +20,6 @@ class RecipeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('isbarista');
     }
 
     /**
