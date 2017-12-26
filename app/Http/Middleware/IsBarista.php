@@ -17,7 +17,7 @@ class IsBarista
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::user()->isBarista()) {
+        if (!Auth::check() || !Auth::user()->isBarista()) {
             return redirect()->route('home');
         }
 
