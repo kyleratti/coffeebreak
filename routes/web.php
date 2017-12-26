@@ -35,6 +35,11 @@ Route::get('/order/view/open', 'Order\OrderController@viewOpen')
     ->middleware(\App\Http\Middleware\IsBarista::class)
     ->name('order.view.open');
 
+// /recipe
+Route::get('/recipe/view', 'Recipe\RecipeController@view')
+    ->middleware(\App\Http\Middleware\IsBarista::class)
+    ->name('recipe.view');
+
 // /user/
 Route::get('/user/login', 'User\LoginController@showLogin')
     ->name('user.login');
