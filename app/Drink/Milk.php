@@ -34,10 +34,12 @@ class Milk extends Model
     ];
 
     /**
-     * The drinks that belong to the flavor
+     * The drink order that references this
+     * 
+     * @return DrinkOrder
      */
-    public function drinks()
+    public function drinkorders()
     {
-        return $this->belongstoMany('App\Drink\Drink');
+        return $this->belongstoMany('App\Drink\DrinkOrder');
     }
 }
