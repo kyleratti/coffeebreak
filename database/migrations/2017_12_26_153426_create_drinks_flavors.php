@@ -6,6 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 use App\Drink\Drink;
 use App\Drink\Flavor;
+use App\Drink\Milk;
 
 class CreateDrinksFlavors extends Migration
 {
@@ -29,6 +30,17 @@ class CreateDrinksFlavors extends Migration
 
         $objRaspberry = Flavor::create([
             'name' => 'Raspberry',
+            'is_in_stock' => true,
+        ]);
+
+        // Milks
+        $objMilk = Milk::create([
+            'name' => 'Milk',
+            'is_in_stock' => true,
+        ]);
+
+        $objAlmondMilk = Milk::create([
+            'name' => 'Almond Milk',
             'is_in_stock' => true,
         ]);
 
