@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Drink\Drink;
+use App\Drink\Milk;
 
 class MenuController extends Controller
 {
@@ -26,15 +27,9 @@ class MenuController extends Controller
      */
     public function show()
     {
-        $arrDrinksInStock = [];
-
-        foreach(Drink::where('is_in_stock', 1)->get() as $objDrink) {
-            if($objDrink->isInStock())
-                $arrDrinksInStock[] = $objDrink;
-        }
-
         return view('menu.show', [
-            'objDrinks' => $arrDrinksInStock,
+            'objDrinks' => Drink::allInStock(),
+            'objMilks' => Milk::allInStock(),
         ]);
     }
 }
