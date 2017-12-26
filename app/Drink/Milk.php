@@ -42,4 +42,23 @@ class Milk extends Model
     {
         return $this->belongstoMany('App\Drink\DrinkOrder');
     }
+
+    /**
+     * Get all milks currently in stock
+     * 
+     * @return array
+     */
+    public static function allInStock()
+    {
+        $arrAllMilks = Milk::all();
+        $arrAvailable = [];
+
+        foreach($arrAllMilks as $objMilk) {
+            if($objMilk->is_in_stock) {
+                $arrAvailable[] = $objMilk;
+            }
+        }
+
+        return $arrAvailable;
+    }
 }

@@ -63,6 +63,6 @@ class DrinkOrder extends Model
      */
     public function milk()
     {
-        return $this->hasOne('App\Drink\Milk');
+        return $this->belongsTo('App\Drink\Milk');
     }
 }

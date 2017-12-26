@@ -60,4 +60,23 @@ class Drink extends Model
     {
         return $this->flavors()->where('is_in_stock', 0)->count() == 0;
     }
+
+    /**
+     * Get all drinks currently in stock
+     * 
+     * @return array
+     */
+    public static function allInStock()
+    {
+        $arrAllDrinks = Drink::all();
+        $arrAvailable = [];
+
+        foreach($arrAllDrinks as $objDrink) {
+            if($objDrink->isInStock()) {
+                $arrAvailable[] = $objDrink;
+            }
+        }
+
+        return $arrAvailable;
+    }
 }
