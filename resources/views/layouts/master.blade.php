@@ -31,7 +31,7 @@
                                 <a class="nav-link" href="{{ route('order.view.open') }}">Open Orders <span class="badge badge-light">{{ App\Drink\DrinkOrder::whereNull('finished_at')->count() }}</span></a>
                             </li>
                             <li class="nav-item {{ Route::currentRouteName() == 'recipe.view' ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ ruote('recipe.view') }}">Recipes</a>
+                                <a class="nav-link" href="{{ route('recipe.view') }}">Recipes</a>
                             </li>
                         @endif
                         <li class="nav-item {{ Route::currentRouteName() == 'user.logout' ? 'active' : '' }}">
