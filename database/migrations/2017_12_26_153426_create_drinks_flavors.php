@@ -51,7 +51,7 @@ class CreateDrinksFlavors extends Migration
 
         $objAlmondMilk = Milk::create([
             'name' => 'Almond Milk',
-            'is_in_stock' => true,
+            'is_in_stock' => false,
         ]);
 
         // Drinks
