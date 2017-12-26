@@ -1,4 +1,4 @@
-<div class="card border-secondary" style="width: 15rem;">
+<div class="card border-secondary w-25">
     <div class="card-body">
         <h4 class="card-title">{{ $objDrink->name }}</h4>
         
@@ -23,8 +23,7 @@
                 <label for="milk" class="col-sm-4 col-form-label">Milk</label>
                 <div class="col-sm-8">
                     <select class="custom-select form-control" name="milk">
-                        <option value="1" selected>Whole</option>
-                        <option value="2">Almond</option>
+                        @each('menu.milk.item', App\Drink\Milk::allInStock(), 'objMilk', 'menu.milk.empty')
                     </select>
                 </div>
             </div>

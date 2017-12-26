@@ -14,7 +14,7 @@
     @endif
 
     <div class="drinks">
-        <div class="card-deck">
+        <div class="card-group">
             @each('menu.item', $objDrinks, 'objDrink', 'menu.empty')
         </div>
     </div>
