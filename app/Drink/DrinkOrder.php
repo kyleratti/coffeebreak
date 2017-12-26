@@ -57,22 +57,12 @@ class DrinkOrder extends Model
     }
 
     /**
-     * Translate the milk ID to the type of milk
+     * The type of milk desired with this order
      * 
-     * @return string
+     * @return Milk
      */
-    public function getMilkType()
+    public function milk()
     {
-        switch($this->milk)
-        {
-            case 1:
-                return "Whole";
-            case 2:
-                return "Almond";
-            default:
-                return "Whole";
-        }
-
-        return "Whole";
+        return $this->hasOne('App\Drink\Milk');
     }
 }
