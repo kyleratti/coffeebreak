@@ -18,7 +18,6 @@ class CreateDrinksTable extends Migration
             $table->string('name')->unique();
             $table->string('description');
             $table->unsignedTinyInteger('shots')->index();
-            $table->boolean('is_in_stock')->index();
             $table->timestamps();
         });
     }
