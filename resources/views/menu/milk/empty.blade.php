@@ -1,1 +1,1 @@
-<option selected disabled>(error loading milk)</option>
+<option selected disabled>(no milk available!)</option>
