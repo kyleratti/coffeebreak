@@ -19,6 +19,12 @@ Route::get('/', function () {
 Route::get('/admin/settings/accepting_orders/toggle', 'Admin\SettingsController@toggleAcceptingOrders')
     ->name('admin.settings.accepting_orders.toggle');
 
+Route::get('/admin/settings/availability/milk/toggle/{iMilkID}', 'Admin\SettingsController@toggleMilkAvailability')
+    ->name('admin.settings.availability.milk.toggle');
+
+Route::get('/admin/settings/availability/flavor/toggle/{iFlavorID}', 'Admin\SettingsController@toggleFlavorAvailability')
+    ->name('admin.settings.availability.flavor.toggle');
+
 // /menu/
 Route::get('/menu', 'Menu\MenuController@show')
     ->name('menu');
@@ -26,6 +32,9 @@ Route::get('/menu', 'Menu\MenuController@show')
 // /order
 Route::post('/order/store', 'Order\OrderController@store')
     ->name('order.place');
+
+Route::get('/order/complete', 'Order\OrderController@complete')
+    ->name('order.complete');
 
 Route::get('/order/store/mailable', function() {
     return new App\Mail\OrderPlaced(App\Drink\DrinkOrder::first());
