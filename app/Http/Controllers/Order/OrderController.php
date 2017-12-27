@@ -47,7 +47,7 @@ class OrderController extends Controller
         $objValidatedData = $objRequest->validate([
             'drink' => 'bail|required',
             'shots' => 'bail|required|between:0,4',
-            'milk' => 'required|between:1,2',
+            'milk' => 'required',
         ]);
 
         $iDrinkID = intval($objRequest->input('drink'));
