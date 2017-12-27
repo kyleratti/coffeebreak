@@ -7,28 +7,30 @@
         </p>
     </div>
 
-    <div class="card-footer">
-        <form method="POST" action="{{ route('order.place') }}">
-            {{ csrf_field() }}
-            <input type="hidden" name="drink" value="{{ $objDrink->id }}"/>
+    @if(Setting::get('accepting_orders', false))
+        <div class="card-footer">
+            <form method="POST" action="{{ route('order.place') }}">
+                {{ csrf_field() }}
+                <input type="hidden" name="drink" value="{{ $objDrink->id }}"/>
 
-            <div class="form-group row">
-                <label for="shots" class="col-sm-6 col-form-label">Espresso Shots</label>
-                <div class="col-sm-6">
-                    <input type="number" class="form-control" name="shots" value="{{ $objDrink->shots }}" max="4" min="0" placeholder="{{ $objDrink->shots }}" />
+                <div class="form-group row">
+                    <label for="shots" class="col-sm-6 col-form-label">Espresso Shots</label>
+                    <div class="col-sm-6">
+                        <input type="number" class="form-control" name="shots" value="{{ $objDrink->shots }}" max="4" min="0" placeholder="{{ $objDrink->shots }}" />
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group row">
-                <label for="milk" class="col-sm-4 col-form-label">Milk</label>
-                <div class="col-sm-8">
-                    <select class="custom-select form-control" name="milk">
-                        @each('menu.milk.item', App\Drink\Milk::allInStock(), 'objMilk', 'menu.milk.empty')
-                    </select>
+                <div class="form-group row">
+                    <label for="milk" class="col-sm-4 col-form-label">Milk</label>
+                    <div class="col-sm-8">
+                        <select class="custom-select form-control" name="milk">
+                            @each('menu.milk.item', App\Drink\Milk::allInStock(), 'objMilk', 'menu.milk.empty')
+                        </select>
+                    </div>
                 </div>
-            </div>
 
-            <button type="submit" class="btn btn-outline btn-primary" {{ !Setting::get('accepting_orders', false) ? 'disabled' : '' }}>Place Order</button>
-        </form>
-    </div>
+                <button type="submit" class="btn btn-outline btn-primary w-100">Place Order</button>
+            </form>
+        </div>
+    @endif
 </div>
