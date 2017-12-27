@@ -13,7 +13,7 @@
         <ul class="list-group list-group-flush bg-success">
             <li class="list-group-item bg-light"><b>{{ $objOrder->drink->name }}</b></li>
             <li class="list-group-item bg-light">{{ $objOrder->shots }} espresso shot{{ $objOrder->shots != 1 ? 's' : '' }}</li>
-            <li class="list-group-item bg-light">{{ $objOrder->getMilkType() }} milk</li>
+            <li class="list-group-item bg-light">{{ $objOrder->milk->name }}</li>
         </ul>
     </div>
 @endsection
