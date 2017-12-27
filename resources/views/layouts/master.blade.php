@@ -53,6 +53,8 @@
         @if(App::environment('local'))
             @include("layouts.debug")
         @endif
+
+        @include('layouts.alerts')
     </div>
 
     <div class="container">
