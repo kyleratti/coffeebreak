@@ -11,5 +11,5 @@
 
     <p><b>{{ $objDrinkOrder->drink->name }}</b></p>
     <p>{{ $objDrinkOrder->shots }} espresso shot{{ $objDrinkOrder->shots != 1 ? 's' : '' }}</p>
-    <p>{{ $objDrinkOrder->getMilkType() }} milk</p>
+    <p>{{ $objDrinkOrder->milk->name }}</p>
 @endsection

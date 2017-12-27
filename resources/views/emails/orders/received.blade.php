@@ -27,7 +27,7 @@
 
         <tr>
             <th>Milk</th>
-            <td>{{ $objDrinkOrder->getMilkType() }} milk</td>
+            <td>{{ $objDrinkOrder->milk->name }}</td>
         </tr>
     </table>
 @endsection
