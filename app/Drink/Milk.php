@@ -50,15 +50,16 @@ class Milk extends Model
      */
     public static function allInStock()
     {
-        $arrAllMilks = Milk::all();
-        $arrAvailable = [];
+        return Milk::where('is_in_stock', true)->get();
+    }
 
-        foreach($arrAllMilks as $objMilk) {
-            if($objMilk->is_in_stock) {
-                $arrAvailable[] = $objMilk;
-            }
-        }
-
-        return $arrAvailable;
+    /**
+     * Get the number of milks currently in stock
+     * 
+     * @return int
+     */
+    public static function numInStock()
+    {
+        return Milk::where('is_in_stock', true)->count();
     }
 }
