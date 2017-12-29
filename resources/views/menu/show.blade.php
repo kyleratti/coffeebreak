@@ -12,7 +12,7 @@
     <div class="drinks">
         @foreach($objDrinks as $objDrink)
             @if($loop->index % 3 == 0)
-                <div class="card-deck">
+                <div class="card-deck card-row">
             @endif
 
             @include('menu.item', ['objDrink' => $objDrink])
