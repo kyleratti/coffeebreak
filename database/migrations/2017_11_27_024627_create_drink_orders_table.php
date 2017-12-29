@@ -24,6 +24,7 @@ class CreateDrinkOrdersTable extends Migration
             $table->unsignedTinyInteger('shots');
             $table->timestamp('finished_at')->nullable()->index();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
