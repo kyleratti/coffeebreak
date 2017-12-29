@@ -6,7 +6,7 @@
 
     <title>@yield("title") - CoffeeBreak</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/app.css"/>
 </head>
 <body>
@@ -50,11 +50,13 @@
             @include('layouts.errors')
         @endif
 
-        @if(App::environment('local'))
+        @if(App::environment('local') && false)
             @include("layouts.debug")
         @endif
 
-        @include('layouts.alerts')
+        @if(Auth::check())
+            @include('layouts.alerts')
+        @endif
     </div>
 
     <div class="container">
