@@ -30,11 +30,21 @@
     <div class="card-footer">
         <div class="row">
             <div class="col">
-                <button class="btn btn-success w-100">Ready!</button>
+                <form method="POST" action="{{ route('admin.drink.completed') }}">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="order_id" value="{{ $objOrder->id }}"/>
+
+                    <button type="submit" class="btn btn-success w-100">Ready!</button>
+                </form>
             </div>
 
             <div class="col">
-                <button class="btn btn-outline-danger w-100">Abandon</button>
+                    <form method="POST" action="{{ route('admin.drink.abandon') }}">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="order_id" value="{{ $objOrder->id }}"/>
+    
+                        <button type="submit" class="btn btn-outline-danger w-100">Cancel</button>
+                    </form>
             </div>
         </div>
     </div>
