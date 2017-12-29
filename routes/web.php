@@ -25,6 +25,12 @@ Route::get('/admin/settings/availability/milk/toggle/{iMilkID}', 'Admin\Settings
 Route::get('/admin/settings/availability/flavor/toggle/{iFlavorID}', 'Admin\SettingsController@toggleFlavorAvailability')
     ->name('admin.settings.availability.flavor.toggle');
 
+Route::post('/admin/drink/complete', 'Admin\DrinkController@completed')
+    ->name('admin.drink.completed');
+
+Route::post('/admin/drink/abandon', 'Admin\DrinkController@abandon')
+    ->name('admin.drink.abandon');
+
 // /menu/
 Route::get('/menu', 'Menu\MenuController@show')
     ->name('menu');
