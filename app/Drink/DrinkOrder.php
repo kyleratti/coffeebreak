@@ -3,9 +3,12 @@
 namespace App\Drink;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DrinkOrder extends Model
 {
+    use SoftDeletes;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -34,6 +37,7 @@ class DrinkOrder extends Model
         'created_at',
         'updated_at',
         'finished_at',
+        'deleted_at',
     ];
 
     /**
