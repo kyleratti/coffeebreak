@@ -6,6 +6,8 @@ use App\Events\OrderReady;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
+use Illuminate\Support\Facades\Mail;
+
 class SendOrderReadyNotification
 {
     /**
