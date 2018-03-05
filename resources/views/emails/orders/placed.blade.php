@@ -10,6 +10,9 @@
     <p>We'll send you another e-mail when it's finished.</p>
 
     <p><b>{{ $objDrinkOrder->drink->name }}</b></p>
+    @if($objDrinkOrder->iced)
+        <p>Iced</p>
+    @endif
     <p>{{ $objDrinkOrder->shots }} espresso shot{{ $objDrinkOrder->shots != 1 ? 's' : '' }}</p>
     <p>{{ $objDrinkOrder->milk->name }}</p>
 @endsection

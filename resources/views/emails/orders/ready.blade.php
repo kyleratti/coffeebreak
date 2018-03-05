@@ -9,5 +9,5 @@
 @section('content')
     <h1>{{ $arrTitles[array_rand($arrTitles)] }}</h1>
 
-    <p>Hey, {{ $objDrinkOrder->user->given_name }}, your {{ strtolower($objDrinkOrder->drink->name) }} is ready! Come pick it up when you have a second.</p>
+    <p>Hey, {{ $objDrinkOrder->user->given_name }}, your {{ $objDrinkOrder->iced ? 'Iced ' : '' }} {{ strtolower($objDrinkOrder->drink->name) }} is ready! Come pick it up when you have a second.</p>
 @endsection

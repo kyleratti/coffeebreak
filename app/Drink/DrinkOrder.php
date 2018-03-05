@@ -16,6 +16,7 @@ class DrinkOrder extends Model
      */
     protected $fillable = [
         'shots',
+        'iced',
         'milk',
         'finished_at',
     ];
@@ -38,6 +39,15 @@ class DrinkOrder extends Model
         'updated_at',
         'finished_at',
         'deleted_at',
+    ];
+
+    /**
+     * The attributes that should be cast to native types
+     * 
+     * @var array
+     */
+    protected $casts = [
+        'iced' => 'boolean',
     ];
 
     /**

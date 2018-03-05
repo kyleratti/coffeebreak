@@ -21,6 +21,11 @@
         </tr>
 
         <tr>
+            <th>Iced?</th>
+            <td>{{ $objDrinkOrder->iced ? 'Yes' : 'No' }}</td>
+        </tr>
+
+        <tr>
             <th>Shots</th>
             <td>{{ $objDrinkOrder->shots }} espresso shot{{ $objDrinkOrder->shots != 1 ? 's' : '' }}</td>
         </tr>

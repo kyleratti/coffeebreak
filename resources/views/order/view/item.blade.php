@@ -9,6 +9,9 @@
     <div class="card-body">
         <h4 class="card-title">{{ $objOrder->drink->name }}</h4>
 
+        @if($objOrder->iced)
+            <p class="card-text iced">Iced</p>
+        @endif
         <p class="card-text">{{ $objOrder->shots }} espresso shot{{ $objOrder->shots != 1 ? 's' : '' }}</p>
         <p class="card-text">{{ $objOrder->milk->name }}</p>
     </div>

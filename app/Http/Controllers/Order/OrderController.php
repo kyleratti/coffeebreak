@@ -52,6 +52,7 @@ class OrderController extends Controller
 
         $iDrinkID = intval($objRequest->input('drink'));
         $iShots = intval($objRequest->input('shots'));
+        $bIced = $objRequest->input('iced') == 'iced';
         $iMilkType = intval($objRequest->input('milk'));
 
         $objDrink = Drink::where('id', $iDrinkID)->first();
@@ -59,6 +60,7 @@ class OrderController extends Controller
 
         $objOrder = new DrinkOrder();
         $objOrder->shots = $iShots;
+        $objOrder->iced = $bIced;
         $objOrder->drink()->associate($objDrink);
         $objOrder->milk()->associate($objMilk);
         $objOrder->user()->associate(Auth::user());

@@ -20,6 +20,15 @@
                     </div>
                 </div>
 
+                <div class="form-group row">    
+                    <div class="col-sm-12">
+                        <select class="custom-select form-control" name="iced">
+                            <option value="hot">Hot</option>
+                            <option value="iced">Iced</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div class="form-group row">
                     <label for="milk" class="col-sm-4 col-form-label">Milk</label>
                     <div class="col-sm-8">
