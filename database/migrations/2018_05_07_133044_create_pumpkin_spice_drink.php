@@ -7,7 +7,7 @@ use Illuminate\Database\Migrations\Migration;
 use App\Drink\Flavor;
 use App\Drink\Drink;
 
-class CratePumpkinSpiceDrink extends Migration
+class CreatePumpkinSpiceDrink extends Migration
 {
     /**
      * Run the migrations.
