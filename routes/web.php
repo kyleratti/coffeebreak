@@ -1,5 +1,7 @@
 <?php
 
+use App\Drink\DrinkOrder;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +14,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'iNumOrders' => DrinkOrder::whereNotNull('finished_at')->count(),
+    ]);
 })->name('home');
 
 // /admin/
