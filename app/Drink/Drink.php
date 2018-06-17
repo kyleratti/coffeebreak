@@ -68,7 +68,7 @@ class Drink extends Model
      */
     public static function allInStock()
     {
-        $arrAllDrinks = Drink::all();
+        $arrAllDrinks = Drink::orderBy('name')->get();
         $arrAvailable = [];
 
         foreach($arrAllDrinks as $objDrink) {
