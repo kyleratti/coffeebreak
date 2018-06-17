@@ -23,14 +23,14 @@
                 <div class="form-group row">    
                     <div class="col-sm-12">
                         <select class="custom-select form-control" name="iced">
-                            <option value="hot">Hot</option>
-                            <option value="iced">Iced</option>
+                            <option value="iced">Cold as ice</option>
+                            <option value="hot">Steaming Hot</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="milk" class="col-sm-4 col-form-label">Milk</label>
+                    <label for="milk" class="col-sm-4 col-form-label">Milk Type</label>
                     <div class="col-sm-8">
                         <select class="custom-select form-control" name="milk">
                             @each('menu.milk.item', App\Drink\Milk::allInStock(), 'objMilk', 'menu.milk.empty')
