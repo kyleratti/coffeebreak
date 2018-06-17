@@ -32,8 +32,8 @@ class CreateHazelnutDrink extends Migration
         $objHazelnut->flavors()->attach($objHazelnutFlavor->id);
 
         $objFrenchVanilla = Drink::create([
-            'name' => 'French Vanilla Latte',
-            'description' => 'A cross between hazelnut and vanilla to create an authentic French beverage',
+            'name' => 'Hazelnut Vanilla Latte',
+            'description' => 'A cross between hazelnut and vanilla to create an authentic French beverage. Tastes very similar to a French Vanilla latte.',
             'shots' => 2,
         ]);
         $objFrenchVanilla->flavors()->attach($objVanillaFlavor->id);
