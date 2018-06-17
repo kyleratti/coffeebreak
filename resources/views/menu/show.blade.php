@@ -6,7 +6,7 @@
     @if(!Setting::get('accepting_orders', false))
         <p>You can browse the menu below, but you won't be able to place an order.</p>
     @else
-        <p>Please browse our <i>vast</i> selection of drinks below. When you're ready, just click the <b>Place Order</b> button.</p>
+        <p>Please browse our vast selection of drinks below. When you're ready, just click the <b>Place Order</b> button.</p>
     @endif
 
     <div class="drinks">

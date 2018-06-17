@@ -40,4 +40,23 @@ class Flavor extends Model
     {
         return $this->belongstoMany('App\Drink\Drink');
     }
+
+    /**
+     * Get all flavors currently out of stock
+     * 
+     * @return array
+     */
+    public static function allOutOfStock()
+    {
+        $arrOOSFlavors = Flavor::where('is_in_stock', 0)->orderBy('name')->get();
+        $arrOOS = [];
+
+        foreach($arrOOSFlavors as $objFlavor) {
+            if(!$objFlavor->is_in_stock) {
+                $arrOOS[] = $objFlavor;
+            }
+        }
+
+        return $arrOOS;
+    }
 }

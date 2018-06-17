@@ -46,21 +46,21 @@
                 </ul>
             </div>
         </nav>
+    </div>
 
+    <div class="container">
         @if($errors->any())
             @include('layouts.errors')
         @endif
 
-        @if(App::environment('local') && false)
+        @if(App::environment('local'))
             @include("layouts.debug")
         @endif
 
         @if(Auth::check())
             @include('layouts.alerts')
         @endif
-    </div>
-
-    <div class="container">
+        
         <div class="content">
             @yield("content")
         </div>

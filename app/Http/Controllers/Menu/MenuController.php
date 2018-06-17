@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Menu;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Drink\Flavor;
 use App\Drink\Drink;
 use App\Drink\Milk;
 
@@ -30,6 +31,8 @@ class MenuController extends Controller
         return view('menu.show', [
             'objDrinks' => Drink::allInStock(),
             'objMilks' => Milk::allInStock(),
+
+            'objOutOfStock' => Flavor::allOutOfStock(),
         ]);
     }
 }
