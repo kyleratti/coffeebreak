@@ -14,7 +14,7 @@
     <p><i>* I make absolutely no claims to the reliability of this website. If it messes up and you don't get your coffee, well, that sucks. Forward your complaints to <a href="mailto:noreply@westminsteramerican.com">noreply@westminsteramerican.com</a></i>.</p>
 
     @if(Auth::check())
-        @if(Auth::user()->email === "kratti@westminsteramerican.com" || Auth::user()->email === "aqueen@westminsteramerican.com")
+        @if(Auth::user()->email === "lwetzel@westminsteramerican.com" || Auth::user()->email === "aqueen@westminsteramerican.com")
             <p><i>p.s. <b>{{ Auth::user()->given_name }}</b>, please don't order 18 coffees again :(</i></p>
         @endif
     @endif
