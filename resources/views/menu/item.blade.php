@@ -24,7 +24,7 @@
                     <div class="col-sm-12">
                         <select class="custom-select form-control" name="iced">
                             <option value="iced">Cold as ice</option>
-                            <option value="hot">Steaming Hot</option>
+                            <option value="hot">Steaming hot</option>
                         </select>
                     </div>
                 </div>

@@ -3,6 +3,8 @@
 @section('title', 'Menu')
 
 @section('content')
+    <h1 class="display-2">Menu</h1>
+
     @if(!Setting::get('accepting_orders', false))
         <p>You can browse the menu below, but you won't be able to place an order.</p>
     @else

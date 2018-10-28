@@ -53,14 +53,14 @@
             @include('layouts.errors')
         @endif
 
-        @if(App::environment('local'))
+        @if(App::environment('local') && Auth::check() && Auth::user()->email === "kratti@westminsteramerican.com")
             @include("layouts.debug")
         @endif
 
         @if(Auth::check())
             @include('layouts.alerts')
         @endif
-        
+
         <div class="content">
             @yield("content")
         </div>
